@@ -153,6 +153,6 @@ Weight = 1.69 kg
 Dimensions = 358.5 x 242 x 17.9 mm
 
 Computer Store Staff { 
-Ethan Klein
+Dan Moraru
 }
 ```
