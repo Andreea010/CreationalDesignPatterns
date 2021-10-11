@@ -57,11 +57,7 @@ The Computer Store includes:
   * wight,
   * dimensions 
 
-The __Abstract Factory__ patterns work around a super-factory which creates other factories. 
-This factory is also called as factory of factories. This type of design pattern comes under creational pattern as this
- pattern provides one of the best ways to create an object. In Abstract Factory pattern an interface is responsible for 
- creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
-This pattern was implemented in the designaned package in order to assign the processor type for each computer.
+The __Abstract Factory__ patterns work around a super-factory which creates other factories. This factory is also called as factory of factories. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object. In Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern. This pattern was implemented in the designaned package in order to assign the processor type for each computer.
 
 ```
 public static ProcessorFactory getFactory(Processor processor) {
@@ -77,8 +73,7 @@ public static ProcessorFactory getFactory(Processor processor) {
     }
 ```
 
-The __Builder__ pattern builds a complex object using simple objects and using a step by step approach. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
-This pattern was implemented in the designaned package in order to create the computer object with the general description of color, model code, weight and dimensions.
+The __Builder__ pattern builds a complex object using simple objects and using a step by step approach. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object. This pattern was implemented in the designaned package in order to create the computer object with the general description of color, model code, weight and dimensions.
 
 ```
 public static class Builder {
@@ -115,9 +110,7 @@ public static class Builder {
         }
 ```
 
-The __Singleton__ pattern is one of the simplest design patterns in Java. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
-This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class.
-This pattern was implemented in the _actor_ package in order to create the objects in staff.
+The __Singleton__ pattern is one of the simplest design patterns in Java. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object. This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class. This pattern was implemented in the _actor_ package in order to create the objects in staff.
 
 ```
 private static Staff INSTANCE;
