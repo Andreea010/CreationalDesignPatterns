@@ -3,14 +3,23 @@ package demo;
 import demo.abstractfactory.ComputerAbstractFactory;
 import demo.abstractfactory.ProcessorFactory;
 import demo.builder.Computer;
+import demo.models.actors.Consultant;
+import demo.models.actors.Employee;
+import demo.models.actors.ExecutiveDirector;
+import demo.models.actors.Manager;
 import demo.models.specs.manufacturer.Manufacturer;
 import demo.models.specs.processor.Processor;
-import demo.models.actors.singleton.Staff;
+import demo.models.structures.registry.*;
+import demo.models.structures.store.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Stock stock = new ItemQuantity(new ItemName(new IDNumber(new StockRegistry())));
+        System.out.println(stock.make());
+
+        System.out.println("------------- Computer Description ------------");
         ProcessorFactory factory1 = ComputerAbstractFactory.getFactory(Processor.INTEL);
         demo.models.specs.Computer asus = factory1.create(Manufacturer.ASUS);
         asus.display();
@@ -35,10 +44,26 @@ public class Main {
         Computer computer2 = builder2.build();
         System.out.println(computer2);
 
-        Staff employee = Staff.getInstance();
-        System.out.println("\n" + "Computer Store Staff { " + "\n" + employee.getName() + " " + employee.getSurname()
-                + "\n" + "}");
+        System.out.println("\n" + "---------------- Staff Information ---------------");
+        Employee consultant = new Consultant("Mihai", 400L);
+        Employee executiveDirector = new ExecutiveDirector("Constantin", 1000L);
+        Employee manager = new Manager("Oleg", 700L);
 
+        executiveDirector.add(manager);
+        System.out.println(executiveDirector.toString());
+        manager.add(consultant);
+        System.out.println(manager.toString());
+        System.out.println(consultant.toString());
+
+        System.out.println("\n" + "------------ Store Departments -----------");
+        Store firstDepartment = new Department("Personnel", 1, "Manager", new FirstDepartment());
+        Store secondDepartment = new Department("Marketing", 2, "Executive Director", new SecondDepartment());
+        Store thirdDepartment = new Department("Inventory", 3, "Consultant", new ThirdDepartment());
+
+        firstDepartment.description();
+        secondDepartment.description();
+        thirdDepartment.description();
     }
+
 }
 
