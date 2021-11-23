@@ -46,13 +46,13 @@ Based on the changes, there are a couple of additional packages:
 * abstractfactory
 * builder
 * models
-    * __actors__
+    * _actors_
     * specs
       * manufacturer
       * processor
     * structures
-      * __registry__
-      * __store__
+      * _registry_
+      * _store_
 
 With the help of the chosen patterns, there has been added:
 * _staff information_, 
