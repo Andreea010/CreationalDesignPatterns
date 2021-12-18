@@ -40,7 +40,7 @@ Based on the changes, there is one additional package:
 * abstractfactory
 * builder
 * models
-* __template__
+* _template_
 
 With the help of the chosen pattern, there has been added:
 * _Web Order logic_,
