@@ -1,5 +1,8 @@
 package demo;
 
+import demo.template.OrderTemplate;
+import demo.template.StoreOrder;
+import demo.template.WebOrder;
 import demo.abstractfactory.ComputerAbstractFactory;
 import demo.abstractfactory.ProcessorFactory;
 import demo.builder.Computer;
@@ -63,6 +66,14 @@ public class Main {
         firstDepartment.description();
         secondDepartment.description();
         thirdDepartment.description();
+
+        System.out.println("\n" + "----------------- Orders -----------------");
+        System.out.println("|Web Order|");
+        OrderTemplate webOrder = new WebOrder();
+        webOrder.processOrder();
+        System.out.println("\n|Store Order|");
+        OrderTemplate storeOrder = new StoreOrder();
+        storeOrder.processOrder();
     }
 
 }
